@@ -37,7 +37,7 @@ class User extends Controller {
             $target_dir  = $_SERVER['DOCUMENT_ROOT'] . '/pendaftaran-utron/public/uploads/';
             $target_file = $target_dir . $nrp . '.' . $ext;
 
-            $bukti_pembayaran = 'bukti_' . $nrp . '.' . $ext;
+            $bukti_pembayaran = $nrp . '.' . $ext;
             
             $result = $this->model('UserModel')->insertUser($nama, $nrp, $program_studi, $nomor_telepon, $email_address, $password, $nama_kelompok, $bukti_pembayaran);
 
