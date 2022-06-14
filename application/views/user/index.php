@@ -4,7 +4,7 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="hstack gap-3">
                     <div>
-                        <img width="60" height="60" src="<?= BASE_URL . '/uploads/' . $_SESSION['user'][0]['foto_profil'] ?>" class="img-thumbnail" alt="...">
+                        <img width="60" height="60" src="<?= BASE_URL . '/uploads/temp/'.$_SESSION['user'][0]['nrp'].'.jpg' ?>" class="img-thumbnail" alt="...">
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <h6>Selamat Datang,</h6>
@@ -23,7 +23,7 @@
                     <div class="col-4 d-flex flex-column justify-content-center">
                         <div class="card p-3">
                             <h5 class="text-center">Foto Profil</h5>
-                            <img style="width: 100%" class="my-3 d-flex align-self-center" src="<?= BASE_URL . '/uploads/' . $_SESSION['user'][0]['bukti_pembayaran'] ?>" alt="">
+                            <img style="width: 100%" class="my-3 d-flex align-self-center" src="<?= BASE_URL . "/uploads/temp/". $_SESSION['user'][0]['nrp'].'.jpg' ?>" alt="">
                         </div>
                     </div>
                     <div class="col-4">

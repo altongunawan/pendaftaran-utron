@@ -21,7 +21,7 @@ class User extends Controller {
     public function setProfilePicture() {
         $nrp = $_SESSION['user'][0]['nrp'];
         $this->model('UserModel')->updateProfilePicture($nrp);
-        move_uploaded_file(BASE_URL . '/uploads/temp/'.$nrp.'.jpg', BASE_URL . '/uploads/'.$nrp.'.jpg');
+        move_uploaded_file(BASE_URL.'/uploads/temp/'.$nrp.'.jpg', BASE_URL.'/uploads/'.$nrp.'.jpg');
         $this->redirect('user');
     }
 
