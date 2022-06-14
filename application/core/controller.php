@@ -11,4 +11,10 @@ class Controller {
         return new $model;
     }
 
+    public function redirect($controller, $method = "index", $args = array())
+    { 
+        $location = BASE_URL . "/" . $controller . "/" . $method . "/" . implode("/",$args);
+        header("Location: " . $location);
+        exit;
+    }
 }

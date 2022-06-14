@@ -4,7 +4,7 @@
         <div class="container">
             <div class="my-4 py-3">
                 <h1 class="text-primary text-title">DATA PENDAFTARAN U-TRON</h1>
-                <a href="<?php BASE_URL ?> home" style="font-family: var(--title-font)">KEMBALI KE MENU PENDAFTARAN</a>
+                <a href="<?= BASE_URL ?>/home/index" style="font-family: var(--title-font)">KEMBALI KE MENU PENDAFTARAN</a>
             </div>
             <table class="table">
                 <thead>

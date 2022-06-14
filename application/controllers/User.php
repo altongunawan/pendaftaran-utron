@@ -1,6 +1,29 @@
 <?php
 
+include("ImageFilter.php");
+
 class User extends Controller {
+
+    public function index() {
+        $data['title'] = 'U-TRON';
+        $this->view('layout/header', $data);
+        $this->view('user/index', $data);
+    }
+
+    public function filterImg() {
+        $img = $_FILES["photo"];
+        $type = $_POST['filter-type'];
+        
+        new ImageFilter($img["tmp_name"], $type);
+        $this->redirect('user');
+    }
+
+    public function setProfilePicture() {
+        $nrp = $_SESSION['user'][0]['nrp'];
+        $this->model('UserModel')->updateProfilePicture($nrp);
+        move_uploaded_file(BASE_URL . '/uploads/temp/'.$nrp.'.jpg', BASE_URL . '/uploads/'.$nrp.'.jpg');
+        $this->redirect('user');
+    }
 
     public function insertUser() {
         
@@ -10,6 +33,7 @@ class User extends Controller {
             $program_studi      = $_POST['program-studi'];
             $nomor_telepon      = $_POST['nomor-telepon'];
             $email_address      = $_POST['email-address'];
+            $password           = $_POST['password'];
             $nama_kelompok      = $_POST['nama-kelompok'];
             $nama_kelompok      = $_POST['nama-kelompok'];
 
@@ -19,7 +43,7 @@ class User extends Controller {
 
             $bukti_pembayaran = $nrp . '.' . $ext;
             
-            $result = $this->model('UserModel')->insertUser($nama, $nrp, $program_studi, $nomor_telepon, $email_address, $nama_kelompok, $bukti_pembayaran);
+            $result = $this->model('UserModel')->insertUser($nama, $nrp, $program_studi, $nomor_telepon, $email_address, $password, $nama_kelompok, $bukti_pembayaran);
 
             if ($result) {
                 move_uploaded_file($_FILES["bukti-pembayaran"]["tmp_name"], $target_file);
