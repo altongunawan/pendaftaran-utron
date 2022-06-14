@@ -41,8 +41,8 @@ class UserModel extends Koneksi {
         $enc_password = password_hash($password, PASSWORD_DEFAULT);
 
         if (!$result["result"]) {
-            $sql = "INSERT INTO user 
-                    VALUES ('$nama', '$nrp', '$program_studi', '$nomor_telepon', '$email_address', '$enc_password', '$nama_kelompok', '$bukti_pembayaran')";
+            $sql = "INSERT INTO user (nama, nrp, program_studi, nomor_telepon, email_address, password, nama_kelompok, bukti_pembayaran)
+                    VALUES ('$nama','$nrp','$program_studi', '$nomor_telepon', '$email_address', '$enc_password', '$nama_kelompok', '$bukti_pembayaran')";
             $this->conn->exec($sql);
             $this->conn = null;
 
