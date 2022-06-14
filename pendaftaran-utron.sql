@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2022 at 06:49 PM
+-- Generation Time: Jun 14, 2022 at 08:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -31,7 +31,7 @@ USE `pendaftaran-utron`;
 
 CREATE TABLE `user` (
   `nama` varchar(255) NOT NULL,
-  `foto_profil` varchar(255) DEFAULT '31120007.jpg',
+  `foto_profil` varchar(255) DEFAULT 'default.jpg',
   `nrp` varchar(10) NOT NULL,
   `program_studi` varchar(30) NOT NULL,
   `nomor_telepon` varchar(15) NOT NULL,
@@ -46,7 +46,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`nama`, `foto_profil`, `nrp`, `program_studi`, `nomor_telepon`, `email_address`, `password`, `nama_kelompok`, `bukti_pembayaran`) VALUES
-('Alton Gunawan', '31120007.jpg', '31120007', 'Teknik Informatika', '085706918892', 'altongunawan27@gmail.com', '$2y$10$iUtwrFMIlV80LgpECe4RzOPpg9Caa1ZAiOCDdAfzbSaokm/vaNiFG', 'U-Tron', '31120007.png');
+('John Doe', '31120000.jpg', '31120000', 'Teknik Informatika', '085706918892', 'johndoe@gmail.com', '$2y$10$3rtnkmzJDy0n5re9Ulu6PezON0svBmJCPgi9FxsXlzG4qnS.KXFnO', 'Default', 'bukti_31120000.png'),
+('Alton Gunawan', '31120007.jpg', '31120007', 'Teknik Informatika', '085706918892', 'altongunawan27@gmail.com', '$2y$10$NvYvankinImh5xGr/vQgEeSSTKTaBYWTmQI.PScQeDRhgdrr4mCrO', 'U-Tron', 'bukti_31120007.png');
 
 --
 -- Indexes for dumped tables
