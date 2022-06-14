@@ -15,13 +15,9 @@ class User extends Controller {
         $type = $_POST['filter-type'];
         
         new ImageFilter($img["tmp_name"], $type);
-        $this->redirect('user');
-    }
-
-    public function setProfilePicture() {
         $nrp = $_SESSION['user'][0]['nrp'];
         $this->model('UserModel')->updateProfilePicture($nrp);
-        move_uploaded_file(BASE_URL.'/uploads/temp/'.$nrp.'.jpg', BASE_URL.'/uploads/'.$nrp.'.jpg');
+
         $this->redirect('user');
     }
 
